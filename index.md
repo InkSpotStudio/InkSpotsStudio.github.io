@@ -1,3 +1,7 @@
+---
+layout: home
+title: Ink Spots
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
