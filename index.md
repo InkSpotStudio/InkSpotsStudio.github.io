@@ -1,53 +1,20 @@
 ---
-layout: home
-title: Ink Spots
+title: "Ink Spots Studio"
 ---
 
-<!-- Overlay div -->
-<div class="overlay"></div>
+<link rel="stylesheet" href="assets/css/style.css">
 
-<!-- Hamburger Navigation -->
-<nav>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <ul id="menu">
-    <li><a href="{{ '/' | relative_url }}">Home</a></li>
-    <li><a href="{{ '/poetry' | relative_url }}">Poetry</a></li>
-    <li><a href="{{ '/about' | relative_url }}">About</a></li>
+<div class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('show')">
+  ☰ Menu
+</div>
+<nav id="nav">
+  <ul>
+    <li><a href="index.md">Home</a></li>
+    <li><a href="about.md">About</a></li>
+    <li><a href="_posts/2025-10-20-first-poem.md">Poetry</a></li>
   </ul>
 </nav>
-<hr>
 
-# Welcome to Ink Spots
+<h1>Welcome to Ink Spots Studio</h1>
+<p>Explore my poems, share your thoughts, and leave comments below!</p>
 
-Here, I share my poems, reflections, and creative writings. Dive in and enjoy the journey.
-
----
-
-## Featured Poems
-
-{% for post in site.posts %}
-<section>
-### [{{ post.title }}]({{ post.url | relative_url }})
-<p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-<a href="{{ post.url | relative_url }}">Read full poem</a>
-</section>
-{% endfor %}
-
-<hr>
-
-## Leave a Comment
-
-<form action="https://formspree.io/f/xovkzvlg" method="POST">
-  <label>Name: <input type="text" name="name" required></label><br><br>
-  <label>Phone: <input type="text" name="phone"></label><br><br>
-  <label>Comment:<br><textarea name="message" rows="4" required></textarea></label><br><br>
-  <button type="submit">Submit</button>
-</form>
-
-<!-- Hamburger Menu Script -->
-<script>
-function toggleMenu() {
-  const menu = document.getElementById('menu');
-  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-}
-</script>
