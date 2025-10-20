@@ -140,4 +140,9 @@ main {
 .comments-list li {
   background-color: rgba(30,30,30,0.85);
   margin-bottom: 1rem;
-  p
+  padding: 1rem;
+  border-radius: 6px;
+}
+.comments-list li strong {
+  color: #ffd700;
+}
