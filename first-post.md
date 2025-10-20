@@ -1,42 +1,50 @@
 ---
-layout: post
-title: "My First Poem"
+title: "First Poetry Post"
 date: 2025-10-20
 ---
 
-<div class="overlay"></div>
+<link rel="stylesheet" href="../assets/css/style.css">
 
-<!-- Hamburger Navigation -->
-<nav>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <ul id="menu">
-    <li><a href="{{ '/' | relative_url }}">Home</a></li>
-    <li><a href="{{ '/poetry' | relative_url }}">Poetry</a></li>
-  </ul>
-</nav>
-<hr>
-
-# My First Poem
-
+<div class="poem">
 Roses are red,<br>
 Violets are blue,<br>
-GitHub Pages is fun,<br>
-And so are you.
+Gold shines bright,<br>
+In the darkened hue.
+</div>
 
 ---
 
 ## Leave a Comment
 
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-  <label>Name: <input type="text" name="name" required></label><br><br>
-  <label>Phone: <input type="text" name="phone"></label><br><br>
-  <label>Comment:<br><textarea name="message" rows="4" required></textarea></label><br><br>
+<form id="comment-form" method="POST" action="https://inkspotstudio.github.io/staticman/v3/entry/github/inkspotstudio/InkSpotsStudio.github.io/main/comments">
+  <label>Name: <input type="text" name="fields[name]" id="name" required></label><br>
+  <label>Email: <input type="email" name="fields[email]" required></label><br>
+  <label>Comment:<br><textarea name="fields[comment]" rows="4" required></textarea></label><br>
   <button type="submit">Submit</button>
 </form>
 
 <script>
-function toggleMenu() {
-  const menu = document.getElementById('menu');
-  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+// Persist name locally for returning users
+const nameInput = document.getElementById('name');
+if(localStorage.getItem('poetName')) {
+  nameInput.value = localStorage.getItem('poetName');
 }
+nameInput.addEventListener('input', () => {
+  localStorage.setItem('poetName', nameInput.value);
+});
 </script>
+
+---
+
+## Comments
+
+<ul class="comments-list">
+{% for comment in site.data.comments %}
+  {% if comment.page == page.url %}
+    <li>
+      <strong>{{ comment.name }}</strong> said:<br>
+      {{ comment.comment | markdownify }}
+    </li>
+  {% endif %}
+{% endfor %}
+</ul>
