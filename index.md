@@ -2,38 +2,48 @@
 layout: home
 title: Ink Spots
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ink Spots</title>
-  <!-- Link to external stylesheet -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="index.html">Home</a>
-    <!-- Add links to posts here -->
-    <!-- Example: <a href="first-post.html">First Post</a> -->
-  </nav>
-  <hr>
+<!-- Hamburger Navigation -->
+<nav>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul id="menu">
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    <li><a href="{{ '/poetry' | relative_url }}">Poetry</a></li>
+    <li><a href="{{ '/about' | relative_url }}">About</a></li>
+  </ul>
+</nav>
+<hr>
 
-  <!-- Homepage Header -->
-  <h1>Welcome to Ink Spots</h1>
-  <p>Here’s where I share my writing, thoughts, and creative work.</p>
-  <hr>
+# Welcome to Ink Spots
 
-  <!-- Example Writing Section -->
-  <section>
-    <h2>My First Post</h2>
-    <p><em>Coming soon...</em></p>
-    <!-- When you create separate post pages, link them here -->
-    <!-- Example: <a href="first-post.html">Read more</a> -->
-  </section>
+Here, I share my poems, reflections, and creative writings. Dive in and enjoy the journey.
 
-</body>
-</html>
+---
 
+## Featured Poems
+
+{% for post in site.posts %}
+<section>
+### [{{ post.title }}]({{ post.url | relative_url }})
+<p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+<a href="{{ post.url | relative_url }}">Read full poem</a>
+</section>
+{% endfor %}
+
+<hr>
+
+## Leave a Comment
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <label>Name: <input type="text" name="name" required></label><br><br>
+  <label>Phone: <input type="text" name="phone"></label><br><br>
+  <label>Comment:<br><textarea name="message" rows="4" required></textarea></label><br><br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+</script>
