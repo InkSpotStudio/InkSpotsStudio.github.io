@@ -1,0 +1,35 @@
+/* Base styling for your site */
+body {
+    font-family: Georgia, serif; /* Change this to Arial, Verdana, etc. */
+    background-color: #faf8f6;   /* Change background color */
+    color: #333;                 /* Change main text color */
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #222; /* Change heading colors */
+    margin-top: 30px;
+}
+
+a {
+    color: #0066cc; /* Change link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
