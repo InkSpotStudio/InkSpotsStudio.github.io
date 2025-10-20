@@ -1,5 +1,14 @@
-title: Ink Spots
-description: My writings and creative work
-theme: minima
-plugins:
-  - jekyll-feed
+title: "Ink Spots Studio"
+description: "Poetry website"
+baseurl: ""
+url: "https://inkspotstudio.github.io/InkSpotsStudio.github.io"
+
+staticman:
+  enabled: true
+  endpoint: https://inkspotstudio.github.io/staticman/v3/entry/github/inkspotstudio/InkSpotsStudio.github.io/main/comments
+  branch: main
+  allowedFields:
+    - name
+    - email
+    - comment
+  moderation: true
