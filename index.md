@@ -3,6 +3,9 @@ layout: home
 title: Ink Spots
 ---
 
+<!-- Overlay div -->
+<div class="overlay"></div>
+
 <!-- Hamburger Navigation -->
 <nav>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -41,6 +44,7 @@ Here, I share my poems, reflections, and creative writings. Dive in and enjoy th
   <button type="submit">Submit</button>
 </form>
 
+<!-- Hamburger Menu Script -->
 <script>
 function toggleMenu() {
   const menu = document.getElementById('menu');
