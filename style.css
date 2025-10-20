@@ -1,35 +1,69 @@
-/* Base styling for your site */
+/* --- General Body Styling --- */
 body {
-    font-family: Georgia, serif; /* Change this to Arial, Verdana, etc. */
-    background-color: #faf8f6;   /* Change background color */
-    color: #333;                 /* Change main text color */
-    max-width: 700px;
+    background-color: #121212;  /* Dark background */
+    color: #ffffff;             /* White text */
+    font-family: 'Merriweather', serif; /* Elegant serif font */
+    max-width: 750px;
     margin: 40px auto;
     padding: 20px;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
+/* --- Headings --- */
 h1, h2, h3 {
-    color: #222; /* Change heading colors */
-    margin-top: 30px;
+    color: #ffd700;  /* Gold accents */
 }
 
+/* --- Links --- */
 a {
-    color: #0066cc; /* Change link color */
+    color: #ffd700;
     text-decoration: none;
 }
 
 a:hover {
+    color: #ffa500;
     text-decoration: underline;
 }
 
-nav {
-    text-align: center;
+/* --- Paragraphs (Poetry spacing) --- */
+p {
     margin-bottom: 20px;
 }
 
+/* --- Horizontal rule --- */
 hr {
-    border: none;
     border-top: 1px solid #ccc;
-    margin: 20px 0;
+    margin: 30px 0;
 }
+
+/* --- Navigation --- */
+nav ul {
+    display: none;  /* Hidden on mobile by default */
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin: 15px 0;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    font-size: 2em;
+    color: #ffd700;
+}
+
+@media(min-width: 768px) {
+    .menu-toggle { display: none; }
+    nav ul { display: flex; gap: 20px; }
+}
+
+/* --- Section Hover Effect --- */
+section:hover {
+    background-color: #1a1a1a;
+    padding: 22px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* --- Mobile Respo*
